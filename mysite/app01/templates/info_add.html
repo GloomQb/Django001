@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>添加用户</h1>
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="user" placeholder="用户名"><br>
+    <input type="password" name="pwd" placeholder="密码"><br>
+    <input type="text" name="age" placeholder="年龄"><br>
+    <input type="submit" value="提交">
+
+</form>
+</body>
+</html>

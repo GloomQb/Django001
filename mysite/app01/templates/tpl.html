@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>模板语法的学习</h1>
+    <div>{{ n1 }}</div>
+    <div>{{ n2 }}</div>
+    <div>{{ n2.0 }}</div>
+    <div>{{ n2.1 }}</div>
+    <div>{{ n2.2 }}</div>
+
+    <div>
+        {% for item in n2 %}
+        	<span>{{ item }}</span>
+        {% endfor %}
+        
+    </div>
+<hr/>
+<div>
+    <h3>字典</h3>
+    {{ n3 }}<br>
+    {{ n3.name }}
+    {{ n3.salary }}
+    {{ n3.role }}
+</div>
+<div>
+    <h3>遍历字典</h3>
+    {#获取键和值用.items#}
+    {#获取键用.keys#}
+    {#获取值用.values#}
+    {% for k, v in n3.items %}
+        <span>{{ k }} = {{ v }}</span>
+    {% endfor %}
+</div>
+    <hr/>
+<div>
+    <h3>列表中包含字典</h3>
+    {{ n4.1 }}
+    {{ n4.1.name }}
+    {{ n4.1.role }}
+    <h3>循环一个列表</h3>
+    {% for item in n4 %}
+        <span>{{ item.name }} {{ item.salary }} {{ item.role }}</span><br>
+    {% endfor %}
+</div>
+<hr/>
+{% if n1 == "蔡徐坤" %}
+    <h1>判断对了</h1>
+{% elif n1 == "xxx" %}
+    <h1>叽叽叽</h1>
+{% else %}
+    <h1>判断错了</h1>
+{% endif %}
+
+</body>
+</html>

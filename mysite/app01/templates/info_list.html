@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>INFO列表</h1>
+
+<a href="/info/add/">添加</a>
+<table border="1">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>密码</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in data_list %}
+            <tr>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.password }}</td>
+                <td>{{ obj.age }}</td>
+                <td><input type="button" name="del" value="删除" onclick="window.location.href = 'http://127.0.0.1:8000/info/delete/?nid={{ obj.id }}'"></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
